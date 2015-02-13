@@ -1,0 +1,159 @@
+Feb 12 01:37:00 qa01 kernel: java invoked oom-killer: gfp_mask=0x201da, order=0, oom_adj=0, oom_score_adj=0
+Feb 12 01:37:00 qa01 kernel: java cpuset=/ mems_allowed=0
+Feb 12 01:37:00 qa01 kernel: Pid: 18429, comm: java Not tainted 2.6.32-431.11.2.el6.x86_64 #1
+Feb 12 01:37:00 qa01 kernel: Call Trace:
+Feb 12 01:37:00 qa01 kernel: [<ffffffff810d05a1>] ? cpuset_print_task_mems_allowed+0x91/0xb0
+Feb 12 01:37:00 qa01 kernel: [<ffffffff81122950>] ? dump_header+0x90/0x1b0
+Feb 12 01:37:00 qa01 kernel: [<ffffffff81227a5c>] ? security_real_capable_noaudit+0x3c/0x70
+Feb 12 01:37:00 qa01 kernel: [<ffffffff81122dd2>] ? oom_kill_process+0x82/0x2a0
+Feb 12 01:37:00 qa01 kernel: [<ffffffff81122d11>] ? select_bad_process+0xe1/0x120
+Feb 12 01:37:00 qa01 kernel: [<ffffffff81123210>] ? out_of_memory+0x220/0x3c0
+Feb 12 01:37:00 qa01 kernel: [<ffffffff8112fb2f>] ? __alloc_pages_nodemask+0x89f/0x8d0
+Feb 12 01:37:00 qa01 kernel: [<ffffffff81167aaa>] ? alloc_pages_current+0xaa/0x110
+Feb 12 01:37:00 qa01 kernel: [<ffffffff8111fd47>] ? __page_cache_alloc+0x87/0x90
+Feb 12 01:37:00 qa01 kernel: [<ffffffff8111f72e>] ? find_get_page+0x1e/0xa0
+Feb 12 01:37:00 qa01 kernel: [<ffffffff81120ce7>] ? filemap_fault+0x1a7/0x500
+Feb 12 01:37:00 qa01 kernel: [<ffffffff8114a094>] ? __do_fault+0x54/0x530
+Feb 12 01:37:00 qa01 kernel: [<ffffffff8114a667>] ? handle_pte_fault+0xf7/0xb00
+Feb 12 01:37:00 qa01 kernel: [<ffffffff810af1be>] ? futex_wake+0x10e/0x120
+Feb 12 01:37:00 qa01 kernel: [<ffffffff8114b29a>] ? handle_mm_fault+0x22a/0x300
+Feb 12 01:37:00 qa01 kernel: [<ffffffff8114dc56>] ? find_vma+0x46/0x80
+Feb 12 01:37:00 qa01 kernel: [<ffffffff8104a8d8>] ? __do_page_fault+0x138/0x480
+Feb 12 01:37:00 qa01 kernel: [<ffffffff8103f9d8>] ? pvclock_clocksource_read+0x58/0xd0
+Feb 12 01:37:00 qa01 kernel: [<ffffffff8103ea6c>] ? kvm_clock_read+0x1c/0x20
+Feb 12 01:37:00 qa01 kernel: [<ffffffff8103ea79>] ? kvm_clock_get_cycles+0x9/0x10
+Feb 12 01:37:00 qa01 kernel: [<ffffffff810a6167>] ? getnstimeofday+0x57/0xe0
+Feb 12 01:37:00 qa01 kernel: [<ffffffff8152da7e>] ? do_page_fault+0x3e/0xa0
+Feb 12 01:37:00 qa01 kernel: [<ffffffff8152ae35>] ? page_fault+0x25/0x30
+Feb 12 01:37:00 qa01 kernel: Mem-Info:
+Feb 12 01:37:00 qa01 kernel: Node 0 DMA per-cpu:
+Feb 12 01:37:00 qa01 kernel: CPU    0: hi:    0, btch:   1 usd:   0
+Feb 12 01:37:00 qa01 kernel: CPU    1: hi:    0, btch:   1 usd:   0
+Feb 12 01:37:00 qa01 kernel: CPU    2: hi:    0, btch:   1 usd:   0
+Feb 12 01:37:00 qa01 kernel: CPU    3: hi:    0, btch:   1 usd:   0
+Feb 12 01:37:00 qa01 kernel: CPU    4: hi:    0, btch:   1 usd:   0
+Feb 12 01:37:00 qa01 kernel: CPU    5: hi:    0, btch:   1 usd:   0
+Feb 12 01:37:00 qa01 kernel: CPU    6: hi:    0, btch:   1 usd:   0
+Feb 12 01:37:00 qa01 kernel: CPU    7: hi:    0, btch:   1 usd:   0
+Feb 12 01:37:00 qa01 kernel: Node 0 DMA32 per-cpu:
+Feb 12 01:37:00 qa01 kernel: CPU    0: hi:  186, btch:  31 usd: 134
+Feb 12 01:37:00 qa01 kernel: CPU    1: hi:  186, btch:  31 usd:  74
+Feb 12 01:37:00 qa01 kernel: CPU    2: hi:  186, btch:  31 usd:  28
+Feb 12 01:37:00 qa01 kernel: CPU    3: hi:  186, btch:  31 usd:  52
+Feb 12 01:37:00 qa01 kernel: CPU    4: hi:  186, btch:  31 usd:  76
+Feb 12 01:37:00 qa01 kernel: CPU    5: hi:  186, btch:  31 usd:  30
+Feb 12 01:37:00 qa01 kernel: CPU    6: hi:  186, btch:  31 usd:  84
+Feb 12 01:37:00 qa01 kernel: CPU    7: hi:  186, btch:  31 usd:  32
+Feb 12 01:37:00 qa01 kernel: Node 0 Normal per-cpu:
+Feb 12 01:37:00 qa01 kernel: CPU    0: hi:  186, btch:  31 usd:  37
+Feb 12 01:37:00 qa01 kernel: CPU    1: hi:  186, btch:  31 usd:  44
+Feb 12 01:37:00 qa01 kernel: CPU    2: hi:  186, btch:  31 usd: 165
+Feb 12 01:37:00 qa01 kernel: CPU    3: hi:  186, btch:  31 usd:  34
+Feb 12 01:37:00 qa01 kernel: CPU    4: hi:  186, btch:  31 usd:  67
+Feb 12 01:37:00 qa01 kernel: CPU    5: hi:  186, btch:  31 usd: 166
+Feb 12 01:37:00 qa01 kernel: CPU    6: hi:  186, btch:  31 usd:   0
+Feb 12 01:37:00 qa01 kernel: CPU    7: hi:  186, btch:  31 usd:  91
+Feb 12 01:37:00 qa01 kernel: active_anon:3502274 inactive_anon:464233 isolated_anon:32
+Feb 12 01:37:00 qa01 kernel: active_file:247 inactive_file:6323 isolated_file:0
+Feb 12 01:37:00 qa01 kernel: unevictable:0 dirty:44 writeback:63 unstable:0
+Feb 12 01:37:00 qa01 kernel: free:33317 slab_reclaimable:4400 slab_unreclaimable:11697
+Feb 12 01:37:00 qa01 kernel: mapped:1234 shmem:83 pagetables:26209 bounce:0
+Feb 12 01:37:00 qa01 kernel: Node 0 DMA free:15676kB min:60kB low:72kB high:88kB active_anon:0kB inactive_anon:0kB active_file:0kB inactive_file:0kB unevictable:0kB isolated(anon):0kB isolated(file):0kB present:15272kB mlocked:0kB dirty:0kB writeback:0kB mapped:0kB shmem:0kB slab_reclaimable:0kB slab_unreclaimable:0kB kernel_stack:0kB pagetables:0kB unstable:0kB bounce:0kB writeback_tmp:0kB pages_scanned:0 all_unreclaimable? yes
+Feb 12 01:37:00 qa01 kernel: lowmem_reserve[]: 0 3512 16137 16137
+Feb 12 01:37:00 qa01 kernel: Node 0 DMA32 free:64908kB min:14692kB low:18364kB high:22036kB active_anon:2474748kB inactive_anon:659932kB active_file:104kB inactive_file:52kB unevictable:0kB isolated(anon):0kB isolated(file):0kB present:3596500kB mlocked:0kB dirty:4kB writeback:0kB mapped:96kB shmem:0kB slab_reclaimable:620kB slab_unreclaimable:776kB kernel_stack:352kB pagetables:5272kB unstable:0kB bounce:0kB writeback_tmp:0kB pages_scanned:105 all_unreclaimable? no
+Feb 12 01:37:00 qa01 kernel: lowmem_reserve[]: 0 0 12625 12625
+Feb 12 01:37:00 qa01 kernel: Node 0 Normal free:52684kB min:52824kB low:66028kB high:79236kB active_anon:11534348kB inactive_anon:1197000kB active_file:884kB inactive_file:25240kB unevictable:0kB isolated(anon):128kB isolated(file):0kB present:12928000kB mlocked:0kB dirty:172kB writeback:252kB mapped:4840kB shmem:332kB slab_reclaimable:16980kB slab_unreclaimable:46012kB kernel_stack:17320kB pagetables:99564kB unstable:0kB bounce:0kB writeback_tmp:0kB pages_scanned:2336 all_unreclaimable? yes
+Feb 12 01:37:00 qa01 kernel: lowmem_reserve[]: 0 0 0 0
+Feb 12 01:37:00 qa01 kernel: Node 0 DMA: 3*4kB 2*8kB 0*16kB 1*32kB 2*64kB 1*128kB 0*256kB 0*512kB 1*1024kB 1*2048kB 3*4096kB = 15676kB
+Feb 12 01:37:00 qa01 kernel: Node 0 DMA32: 145*4kB 319*8kB 271*16kB 185*32kB 85*64kB 66*128kB 29*256kB 29*512kB 15*1024kB 0*2048kB 0*4096kB = 64908kB
+Feb 12 01:37:00 qa01 kernel: Node 0 Normal: 661*4kB 791*8kB 473*16kB 284*32kB 141*64kB 63*128kB 19*256kB 7*512kB 1*1024kB 0*2048kB 0*4096kB = 52188kB
+Feb 12 01:37:00 qa01 kernel: 63269 total pagecache pages
+Feb 12 01:37:00 qa01 kernel: 56549 pages in swap cache
+Feb 12 01:37:00 qa01 kernel: Swap cache stats: add 29184685, delete 29128136, find 9813221/12053944
+Feb 12 01:37:00 qa01 kernel: Free swap  = 0kB
+Feb 12 01:37:00 qa01 kernel: Total swap = 2097640kB
+Feb 12 01:37:00 qa01 kernel: 4194303 pages RAM
+Feb 12 01:37:00 qa01 kernel: 111357 pages reserved
+Feb 12 01:37:00 qa01 kernel: 28658 pages shared
+Feb 12 01:37:00 qa01 kernel: 4036920 pages non-shared
+Feb 12 01:37:00 qa01 kernel: [ pid ]   uid  tgid total_vm      rss cpu oom_adj oom_score_adj name
+Feb 12 01:37:00 qa01 kernel: [  478]     0   478     2719        1   6     -17         -1000 udevd
+Feb 12 01:37:00 qa01 kernel: [ 1115]     0  1115    62896      995   6       0             0 rsyslogd
+Feb 12 01:37:00 qa01 kernel: [ 1127]     0  1127     2705       27   6       0             0 irqbalance
+Feb 12 01:37:00 qa01 kernel: [ 1136]     0  1136     3161      261   0     -17         -1000 iptchkd
+Feb 12 01:37:00 qa01 kernel: [ 1143]     0  1143     3161      261   3     -17         -1000 iptchkd
+Feb 12 01:37:00 qa01 kernel: [ 1144]     0  1144     3161      261   6     -17         -1000 iptchkd
+Feb 12 01:37:00 qa01 kernel: [ 1153]     0  1153     1020        1   0       0             0 acpid
+Feb 12 01:37:00 qa01 kernel: [ 1162]     0  1162    19747      254   6     -17         -1000 pz-commd
+Feb 12 01:37:00 qa01 kernel: [ 1171]     0  1171      580       67   3     -17         -1000 pz-agentd
+Feb 12 01:37:00 qa01 kernel: [ 1180]   549  1180    90393     1964   0       0             0 memcached
+Feb 12 01:37:00 qa01 kernel: [ 1197]     0  1197    16652       26   6     -17         -1000 sshd
+Feb 12 01:37:00 qa01 kernel: [ 1224]    38  1224     7680       32   6       0             0 ntpd
+Feb 12 01:37:00 qa01 kernel: [ 1240]     0  1240    27083        2   6       0             0 mysqld_safe
+Feb 12 01:37:00 qa01 kernel: [ 1926]     0  1926    20455       29   6       0             0 master
+Feb 12 01:37:00 qa01 kernel: [ 1936]    89  1936    20517       23   6       0             0 qmgr
+Feb 12 01:37:00 qa01 kernel: [ 1955]   497  1955     2707       40   7       0             0 epmd
+Feb 12 01:37:00 qa01 kernel: [ 1986]     0  1986    27117        1   0       0             0 S80rabbitmq-ser
+Feb 12 01:37:00 qa01 kernel: [ 1999]     0  1999    27049        2   2       0             0 bash
+Feb 12 01:37:00 qa01 kernel: [ 2000]     0  2000    27049        2   3       0             0 rabbitmq-server
+Feb 12 01:37:00 qa01 kernel: [ 2008]     0  2008    40936        2   5       0             0 su
+Feb 12 01:37:00 qa01 kernel: [ 2014]   497  2014   249604    35854   4       0             0 beam.smp
+Feb 12 01:37:00 qa01 kernel: [ 2144]   497  2144     2698        2   3       0             0 inet_gethost
+Feb 12 01:37:00 qa01 kernel: [ 2145]   497  2145     3224        2   3       0             0 inet_gethost
+Feb 12 01:37:00 qa01 kernel: [ 2173]     0  2173  7072278    15559   3       0             0 mongod
+Feb 12 01:37:00 qa01 kernel: [ 2231]     0  2231    29332       26   6       0             0 crond
+Feb 12 01:37:00 qa01 kernel: [ 2251]     0  2251   106708     1347   6       0             0 fail2ban-server
+Feb 12 01:37:00 qa01 kernel: [ 2280]     0  2280     5385        6   6       0             0 atd
+Feb 12 01:37:00 qa01 kernel: [ 2322]     0  2322  2277740    59289   0       0             0 java
+Feb 12 01:37:00 qa01 kernel: [ 2370]     0  2370     1016        2   6       0             0 mingetty
+Feb 12 01:37:00 qa01 kernel: [ 2372]     0  2372     1016        2   6       0             0 mingetty
+Feb 12 01:37:00 qa01 kernel: [ 2374]     0  2374     1016        2   7       0             0 mingetty
+Feb 12 01:37:00 qa01 kernel: [ 2376]     0  2376     1016        2   7       0             0 mingetty
+Feb 12 01:37:00 qa01 kernel: [ 2378]     0  2378     1016        2   7       0             0 mingetty
+Feb 12 01:37:00 qa01 kernel: [ 2380]     0  2380     1016        2   2       0             0 mingetty
+Feb 12 01:37:00 qa01 kernel: [ 2383]     0  2383     2693        1   6     -17         -1000 udevd
+Feb 12 01:37:00 qa01 kernel: [ 2384]     0  2384     2718        1   4     -17         -1000 udevd
+Feb 12 01:37:00 qa01 kernel: [21714]     0 21714  7066359    14847   1       0             0 mongod
+Feb 12 01:37:00 qa01 kernel: [21834]     0 21834  6933416    13152   7       0             0 mongod
+Feb 12 01:37:00 qa01 kernel: [19666]   498 19666  1732051   255281   7       0             0 mysqld
+Feb 12 01:37:00 qa01 kernel: [28510]   545 28510   276026    11259   3       0             0 beam.smp
+Feb 12 01:37:00 qa01 kernel: [28541]   545 28541     2698        8   1       0             0 inet_gethost
+Feb 12 01:37:00 qa01 kernel: [28542]   545 28542     3224        3   6       0             0 inet_gethost
+Feb 12 01:37:00 qa01 kernel: [ 6389]   545  6389     3224       17   1       0             0 inet_gethost
+Feb 12 01:37:00 qa01 kernel: [18397]   557 18397  1401638    71905   2       0             0 java
+Feb 12 01:37:00 qa01 kernel: [18808]     0 18808    62066     1693   6       0             0 httpd
+Feb 12 01:37:00 qa01 kernel: [27878]   550 27878   266169    11854   5       0             0 beam.smp
+Feb 12 01:37:00 qa01 kernel: [27903]   550 27903     2698        2   7       0             0 inet_gethost
+Feb 12 01:37:00 qa01 kernel: [27904]   550 27904     3224        2   7       0             0 inet_gethost
+Feb 12 01:37:00 qa01 kernel: [22034]   497 22034  2171444   365957   2       0             0 java
+Feb 12 01:37:00 qa01 kernel: [22044]   497 22044  1318702   218882   5       0             0 java
+Feb 12 01:37:00 qa01 kernel: [22046]   497 22046  1379116    87896   7       0             0 java
+Feb 12 01:37:00 qa01 kernel: [22057]   497 22057   853717   109950   4       0             0 java
+Feb 12 01:37:00 qa01 kernel: [22062]   497 22062  1245837    67801   3       0             0 java
+Feb 12 01:37:00 qa01 kernel: [22070]   497 22070  1609797   320647   5       0             0 java
+Feb 12 01:37:00 qa01 kernel: [22087]   497 22087  1318702   275465   1       0             0 java
+Feb 12 01:37:00 qa01 kernel: [16450]     0 16450    53958     5114   6       0             0 ruby
+Feb 12 01:37:00 qa01 kernel: [16453]     0 16453   183230    40838   2       0             0 ruby
+Feb 12 01:37:00 qa01 kernel: [18936]   500 18936    26558       69   1       0             0 catalina.sh
+Feb 12 01:37:00 qa01 kernel: [18937]   500 18937     8074       82   3       0             0 rotatelogs
+Feb 12 01:37:00 qa01 kernel: [18938]   500 18938  3120736  1919908   6       0             0 java
+Feb 12 01:37:00 qa01 kernel: [ 8925]     0  8925     8074       61   6       0             0 rotatelogs
+Feb 12 01:37:00 qa01 kernel: [ 8926]     0  8926     8074       60   3       0             0 rotatelogs
+Feb 12 01:37:00 qa01 kernel: [ 8927]    48  8927    62604     1970   6       0             0 httpd
+Feb 12 01:37:00 qa01 kernel: [ 8928]    48  8928    62615     1961   5       0             0 httpd
+Feb 12 01:37:00 qa01 kernel: [ 8929]    48  8929    62657     1971   2       0             0 httpd
+Feb 12 01:37:00 qa01 kernel: [ 8930]    48  8930    62694     1975   4       0             0 httpd
+Feb 12 01:37:00 qa01 kernel: [ 8931]    48  8931    62683     1976   6       0             0 httpd
+Feb 12 01:37:00 qa01 kernel: [ 8932]    48  8932    62580     1955   0       0             0 httpd
+Feb 12 01:37:00 qa01 kernel: [ 8933]    48  8933    62609     1949   3       0             0 httpd
+Feb 12 01:37:00 qa01 kernel: [ 8934]    48  8934    62658     1971   5       0             0 httpd
+Feb 12 01:37:00 qa01 kernel: [ 9899]    48  9899    62608     1960   1       0             0 httpd
+Feb 12 01:37:00 qa01 kernel: [ 9924]    48  9924    62643     1953   1       0             0 httpd
+Feb 12 01:37:00 qa01 kernel: [ 9964]    48  9964    62619     1955   1       0             0 httpd
+Feb 12 01:37:00 qa01 kernel: [10394]    48 10394    62643     1973   0       0             0 httpd
+Feb 12 01:37:00 qa01 kernel: [ 8888]    48  8888    62646     1946   0       0             0 httpd
+Feb 12 01:37:00 qa01 kernel: [ 8998]    48  8998    62611     1943   7       0             0 httpd
+Feb 12 01:37:00 qa01 kernel: [18425]    89 18425    20478      230   6       0             0 pickup
+Feb 12 01:37:00 qa01 kernel: [20586]    48 20586    62532     1836   2       0             0 httpd
+Feb 12 01:37:00 qa01 kernel: Out of memory: Kill process 18938 (java) score 417 or sacrifice child
+Feb 12 01:37:00 qa01 kernel: Killed process 18938, UID 500, (java) total-vm:12482944kB, anon-rss:7678888kB, file-rss:744kB
