@@ -43,7 +43,8 @@ class Fluent::OomKillerOutput < Fluent::Output
   end
 
   REGEX1 = /^(\S+\s+\d+\s\d+:\d+:\d+)\s.+/
-  REGEX2 = /Killed process (\d+),\s+UID\s+(\d+),\s+\((\S+)\)\s+total-vm:(\d+)kB,\s+anon-rss:(\d+)kB,\s+file-rss:(\d+)kB/
+  REGEX2 = /Killed process (\d+)\s+\((\S+)\)\s+total-vm:(\d+)kB,\s+anon-rss:(\d+)kB,\s+file-rss:(\d+)kB/
+
   def parse_record_block(tag, time)
     record = {}
 
@@ -60,11 +61,10 @@ class Fluent::OomKillerOutput < Fluent::Output
 
     @logs[:"#{tag}"][-1] =~ REGEX2
     record['pid'] = $1.to_i
-    record['uid'] = $2.to_i
-    record['name'] = $3
-    record['total_vm_kb'] = $4.to_i
-    record['anon_rss_kb'] = $5.to_i
-    record['file_rss_kb'] = $6.to_i
+    record['name'] = $2
+    record['total_vm_kb'] = $3.to_i
+    record['anon_rss_kb'] = $4.to_i
+    record['file_rss_kb'] = $5.to_i
 
     record['raw'] = @logs[:"#{tag}"].map {|m| m.strip}.join("\n")
 
