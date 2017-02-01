@@ -1,14 +1,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |spec|
-  spec.name          = "fluent-plugin-oomkiller"
+  spec.name          = "ivelum-fluent-plugin-oomkiller"
   spec.version       = "0.0.2"
-  spec.authors       = ["Megumi Nakamura"]
-  spec.email         = ["nakamegu@gmail.com"]
+  spec.authors       = ["Megumi Nakamura", "Ilnur Ibragimov"]
+  spec.email         = ["ilnur.ibragimov@ivelum.com"]
 
   spec.summary       = %q{Fluentd plugin to get oom killer log.}
   spec.description   = %q{Fluentd plugin to get oom killer log from system message.}
-  spec.homepage      = "https://github.com/nakamegu/fluent-plugin-oomkiller"
+  spec.homepage      = "https://github.com/ivelum/fluent-plugin-oomkiller"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
