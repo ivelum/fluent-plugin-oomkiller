@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "ivelum-fluent-plugin-oomkiller"
-  spec.version       = "0.0.2"
+  spec.version       = "0.0.4"
   spec.authors       = ["Megumi Nakamura", "Ilnur Ibragimov"]
   spec.email         = ["ilnur.ibragimov@ivelum.com"]
 

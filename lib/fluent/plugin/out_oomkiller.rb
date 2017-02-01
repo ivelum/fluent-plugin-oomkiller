@@ -22,44 +22,51 @@ class Fluent::OomKillerOutput < Fluent::Output
       @logs[:"#{tag}"] = []
     end
     chain.next
-    es.each {|time,record|
+    es.each {|time, record|
       make_record_block(tag, time, record)
     }
   end
 
   def make_record_block(tag, time, record)
-    record.each do |key, value|
-      if @is_oomlog then
-        @logs[:"#{tag}"] << value
-      end
-      if /invoked oom-killer:/ =~ value then
-        @is_oomlog = true
-        @logs[:"#{tag}"] << value
-      elsif /Killed process/ =~ value then
-        @is_oomlog = false
-        parse_record_block(tag, time)
-      end
+    if !record.has_key?('message')
+      return
+    end
+
+    value = record['message']
+
+    if @is_oomlog then
+      @logs[:"#{tag}"] << value
+    end
+
+    if /invoked oom-killer:/ =~ value then
+      @is_oomlog = true
+      @logs[:"#{tag}"] << value
+    elsif /Killed process/ =~ value then
+      @is_oomlog = false
+      parse_record_block(record, tag, time)
     end
   end
 
   REGEX1 = /^(\S+\s+\d+\s\d+:\d+:\d+)\s.+/
   REGEX2 = /Killed process (\d+)\s+\((\S+)\)\s+total-vm:(\d+)kB,\s+anon-rss:(\d+)kB,\s+file-rss:(\d+)kB/
 
-  def parse_record_block(tag, time)
+  def parse_record_block(syslog_record, tag, time)
     record = {}
 
-    if record.has_key?('time') and record['time']
-      datetime = Time.parse(record['time'])
-      time = datetime.to_i if datetime
+    if syslog_record.has_key?('time') and syslog_record['time'] then
+      time = syslog_record['time']
     else
       @logs[:"#{tag}"][0] =~ REGEX1
-      if $1
+      if $1 then
         datetime = Time.parse($1)
         time = datetime.to_i if datetime
       end
     end
 
     @logs[:"#{tag}"][-1] =~ REGEX2
+    record['time'] = time
+    record['host'] = syslog_record['host']
+    record['ident'] = syslog_record['ident']
     record['pid'] = $1.to_i
     record['name'] = $2
     record['total_vm_kb'] = $3.to_i
