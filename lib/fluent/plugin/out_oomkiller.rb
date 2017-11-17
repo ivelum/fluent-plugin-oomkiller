@@ -82,13 +82,13 @@ class Fluent::OomKillerOutput < Fluent::Output
     @logs[:"#{tag}"].clear
 
     if !@remove_tag_prefix && !@remove_tag_suffix && !@add_tag_prefix && !@add_tag_suffix
-      Fluent::Engine.emit(tag, time, record)
+      router.emit(tag, time, record)
 
     else
       _tag = tag.clone
       filter_record(_tag, time, record)
       if tag != _tag
-        Fluent::Engine.emit(_tag, time, record)
+        router.emit(_tag, time, record)
       else
         $log.warn "Can not emit message because the tag has not changed. Dropped record #{record}"
       end
