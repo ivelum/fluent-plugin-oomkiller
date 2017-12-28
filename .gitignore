@@ -11,3 +11,4 @@ tmtags
 *.swp
 .project
 .buildpath
+.DS_Store
